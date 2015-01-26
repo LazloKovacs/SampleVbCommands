@@ -5,14 +5,14 @@ Imports Rhino.PlugIns
 
 ' Plug-in Description Attributes - all of these are optional
 ' These will show in Rhino's option dialog, in the tab Plug-ins
-<Assembly: PlugInDescription(DescriptionType.Address, "-")>
-<Assembly: PlugInDescription(DescriptionType.Country, "-")>
-<Assembly: PlugInDescription(DescriptionType.Email, "-")>
-<Assembly: PlugInDescription(DescriptionType.Phone, "-")>
-<Assembly: PlugInDescription(DescriptionType.Fax, "-")>
-<Assembly: PlugInDescription(DescriptionType.Organization, "-")>
-<Assembly: PlugInDescription(DescriptionType.UpdateUrl, "-")>
-<Assembly: PlugInDescription(DescriptionType.WebSite, "-")>
+<Assembly: PlugInDescription(DescriptionType.Address, "3670 Woodland Park Ave N" & vbCrLf & "Seattle, WA 98103")> 
+<Assembly: PlugInDescription(DescriptionType.Country, "United States")> 
+<Assembly: PlugInDescription(DescriptionType.Email, "devsupport@mcneel.com")> 
+<Assembly: PlugInDescription(DescriptionType.Phone, "206-545-7000")> 
+<Assembly: PlugInDescription(DescriptionType.Fax, "206-545-7321")> 
+<Assembly: PlugInDescription(DescriptionType.Organization, "Robert McNeel & Associates")> 
+<Assembly: PlugInDescription(DescriptionType.UpdateUrl, "https://github.com/dalefugier")> 
+<Assembly: PlugInDescription(DescriptionType.WebSite, "http://www.rhino3d.com")> 
 
 
 ' General Information about an assembly is controlled through the following 

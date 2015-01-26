@@ -55,15 +55,14 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="RhinoCommon">
+      <HintPath>C:\Program Files (x86)\Rhinoceros 5\System\RhinoCommon.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="RhinoCommon">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\Rhinoceros 5.0 (64-bit)\System\rhinocommon.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -93,8 +92,12 @@
     </Compile>
     <Compile Include="SampleVbConstructionPlane.vb" />
     <Compile Include="SampleVbDrawString.vb" />
+    <Compile Include="SampleVbEasyLine.vb" />
+    <Compile Include="SampleVbEasyPolyline.vb" />
     <Compile Include="SampleVbExplodeHatch.vb" />
     <Compile Include="SampleVbExtrusion.vb" />
+    <Compile Include="SampleVbGetPoint.vb" />
+    <Compile Include="SampleVbLine.vb" />
     <Compile Include="SampleVbSetDisplayMode.vb" />
     <Compile Include="SampleVbGroupObjects.vb" />
     <Compile Include="SampleVbHistoryDivide.vb" />

@@ -1,18 +1,15 @@
-﻿Imports System
-Imports System.Collections.Generic
-Imports Rhino
+﻿Imports Rhino
 Imports Rhino.Commands
 Imports Rhino.Geometry
 Imports Rhino.Input
-Imports Rhino.Input.Custom
 
 Namespace SampleVbCommands
 
-  <System.Runtime.InteropServices.Guid("5f2b5253-fde4-4d40-abb1-d4b2478b93ed")> _
-  Public Class SampleVbCommandsCommand
+  <System.Runtime.InteropServices.Guid("dfe1df8e-3851-4091-b733-d8fa1573fbac")> _
+  Public Class SampleVbEasyPolyline
     Inherits Command
 
-    Shared _instance As SampleVbCommandsCommand
+    Shared _instance As SampleVbEasyPolyline
 
     Public Sub New()
       ' Rhino only creates one instance of each command class defined in a
@@ -21,7 +18,7 @@ Namespace SampleVbCommands
     End Sub
 
     '''<summary>The only instance of this command.</summary>
-    Public Shared ReadOnly Property Instance() As SampleVbCommandsCommand
+    Public Shared ReadOnly Property Instance() As SampleVbEasyPolyline
       Get
         Return _instance
       End Get
@@ -30,14 +27,22 @@ Namespace SampleVbCommands
     '''<returns>The command name as it appears on the Rhino command line.</returns>
     Public Overrides ReadOnly Property EnglishName() As String
       Get
-        Return "SampleVbCommands"
+        Return "SampleVbEasyPolyline"
       End Get
     End Property
 
     Protected Overrides Function RunCommand(ByVal doc As RhinoDoc, ByVal mode As RunMode) As Result
-      RhinoApp.WriteLine(String.Format("{0} plug-in loaded.", SampleVbCommandsPlugIn.Instance.Name))
-      Return Result.Success
-    End Function
 
+      Dim pline As New Polyline
+      Dim rc As Result = RhinoGet.GetPolyline(pline)
+      If rc = Result.Success Then
+        doc.Objects.AddPolyline(pline)
+        doc.Views.Redraw()
+      End If
+
+      Return Result.Success
+
+    End Function
   End Class
+
 End Namespace
