@@ -101,6 +101,7 @@
     <Compile Include="SampleVbSetDisplayMode.vb" />
     <Compile Include="SampleVbGroupObjects.vb" />
     <Compile Include="SampleVbHistoryDivide.vb" />
+    <Compile Include="SampleVbSweep1.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
