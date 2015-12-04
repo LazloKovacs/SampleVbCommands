@@ -47,9 +47,6 @@ Namespace SampleVbCommands
       clientPoint.X = Int(screenPt.X)
       clientPoint.Y = Int(screenPt.Y)
 
-      RhinoApp.WriteLine(String.Format("Point in world coordinates: {0}", worldPt.ToString()))
-      RhinoApp.WriteLine(String.Format("Point in screen (client) coordinates: {0}", clientPoint.ToString()))
-
       Dim screenPoint = clientPoint
       ClientToScreen(view.Handle, screenPoint)
 
