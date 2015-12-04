@@ -8,23 +8,11 @@ Namespace SampleVbCommands
   Public Class SampleVbHistoryDivide
     Inherits Command
 
-    Shared _instance As SampleVbHistoryDivide
-    Shared _historyVersion As Integer = 20121101
+    Private Const HistoryVersion As Integer = 20121101
 
-    Public Sub New()
-      ' Rhino only creates one instance of each command class defined in a
-      ' plug-in, so it is safe to store a refence in a static field.
-      _instance = Me
-    End Sub
-
-    '''<summary>The only instance of this command.</summary>
-    Public Shared ReadOnly Property Instance() As SampleVbHistoryDivide
-      Get
-        Return _instance
-      End Get
-    End Property
-
-    '''<returns>The command name as it appears on the Rhino command line.</returns>
+    ''' <returns>
+    ''' The command name as it appears on the Rhino command line.
+    ''' </returns>
     Public Overrides ReadOnly Property EnglishName() As String
       Get
         Return "SampleVbHistoryDivide"
@@ -60,7 +48,7 @@ Namespace SampleVbCommands
       End If
 
       ' Create a history record
-      Dim history As New Rhino.DocObjects.HistoryRecord(Me, _historyVersion)
+      Dim history As New Rhino.DocObjects.HistoryRecord(Me, HistoryVersion)
       WriteHistory(history, objref, segmentCount, points.Length)
 
       For i As Integer = 0 To points.Length - 1
@@ -108,7 +96,7 @@ Namespace SampleVbCommands
     End Function
 
     Private Function ReadHistory(replay As Rhino.DocObjects.ReplayHistoryData, ByRef objref As Rhino.DocObjects.ObjRef, ByRef segmentCount As Integer, ByRef pointCount As Integer) As Boolean
-      If _historyVersion <> replay.HistoryVersion Then
+      If HistoryVersion <> replay.HistoryVersion Then
         Return False
       End If
 

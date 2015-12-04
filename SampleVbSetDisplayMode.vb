@@ -8,24 +8,9 @@ Namespace SampleVbCommands
   Public Class SampleVbSetDisplayMode
     Inherits Command
 
-    Shared _instance As SampleVbSetDisplayMode
-
-    Public Sub New()
-      ' Rhino only creates one instance of each command class defined in a
-      ' plug-in, so it is safe to store a refence in a static field.
-      _instance = Me
-    End Sub
-
-    ''' <summary>
-    ''' The only instance of this command.
-    ''' </summary>
-    Public Shared ReadOnly Property Instance() As SampleVbSetDisplayMode
-      Get
-        Return _instance
-      End Get
-    End Property
-
-    '''<returns>The command name as it appears on the Rhino command line.</returns>
+    ''' <returns>
+    ''' The command name as it appears on the Rhino command line.
+    ''' </returns>
     Public Overrides ReadOnly Property EnglishName() As String
       Get
         Return "SampleVbSetDisplayMode"
@@ -47,6 +32,9 @@ Namespace SampleVbCommands
       Return displayName
     End Function
 
+    ''' <summary>
+    ''' Called by Rhino to run the command.
+    ''' </summary>
     Protected Overrides Function RunCommand(doc As RhinoDoc, mode As RunMode) As Result
       Dim view As Rhino.Display.RhinoView = doc.Views.ActiveView
       If view Is Nothing Then
