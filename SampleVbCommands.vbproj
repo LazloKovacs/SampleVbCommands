@@ -99,6 +99,7 @@
     <Compile Include="SampleVbGetPoint.vb" />
     <Compile Include="SampleVbLine.vb" />
     <Compile Include="SampleVbScreenPoint.vb" />
+    <Compile Include="SampleVbSelectEventHandler.vb" />
     <Compile Include="SampleVbSetDisplayMode.vb" />
     <Compile Include="SampleVbGroupObjects.vb" />
     <Compile Include="SampleVbHistoryDivide.vb" />
